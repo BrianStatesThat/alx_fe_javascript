@@ -9,25 +9,29 @@
     </style>
 </head>
 <body>
-    <select id="categoryFilter" onchange="filterQuotes()">
-      <option value="all">All Categories</option>
-    </select>
-    <div id="quote-container"></div>
-    <button id="random-btn">Show Random Quote</button>
-    <div id="form-container"></div>
-
-    <div id="syncStatus" aria-live="polite"></div>
-
-    <div id="conflictsPanel" hidden>
-      <h3>Conflicts detected</h3>
-      <ul id="conflictList"></ul>
+    <h1>Dynamic Quote Generator</h1>
+    
+    <div class="controls">
+        <select id="categoryFilter" onchange="filterQuotes()">
+            <option value="all">All Categories</option>
+        </select>
+        <button id="random-btn" onclick="showRandomQuote()">Show Random Quote</button>
+        <button id="exportBtn" onclick="exportToJson()">Export Quotes</button>
     </div>
-      <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
-
-    <button id="syncNowBtn" type="button">Sync Now</button>
-    <!-- Optional testing: uncomment to simulate conflicts -->
-    <!-- <button id="simulateConflictBtn" type="button">Simulate Conflict</button> -->
-
+    
+    <div id="quote-container"></div>
+    
+    <div class="form-group">
+        <h3>Add New Quote</h3>
+        <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
+        <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
+        <button type="button" id="addQuoteBtn">Add Quote</button>
+    </div>
+    
+    <div class="form-group">
+        <h3>Import Quotes</h3>
+        <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
