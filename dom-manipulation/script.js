@@ -176,3 +176,14 @@ document.addEventListener("DOMContentLoaded", () => {
   syncQuotes();
   setInterval(syncWithServer, 30000); // auto-sync every 30s
 });
+
+  function importFromJsonFile(event) {
+    const fileReader = new FileReader();
+    fileReader.onload = function(event) {
+      const importedQuotes = JSON.parse(event.target.result);
+      quotes.push(...importedQuotes);
+      saveQuotes();
+      alert('Quotes imported successfully!');
+    };
+    fileReader.readAsText(event.target.files[0]);
+  }
