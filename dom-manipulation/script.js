@@ -34,7 +34,7 @@ function loadQuotes() {
     quotes = [
       { text: "The best way to get started is to quit talking and begin doing.", category: "Motivation" },
       { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", category: "Perseverance" },
-      { text: "Your time is limited, so don’t waste it living someone else’s life.", category: "Life" }
+      { text: "Your time is limited, so don't waste it living someone else's life.", category: "Life" }
     ];
     saveQuotes();
   }
